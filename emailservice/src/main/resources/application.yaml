@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: emailservice
+
+  kafka:
+    consumer:
+      group-id: flights-block2
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            type:
+              mapping: SendMailMessage:com.profITsoft.emailservice.messaging.SendMailMessage
+            trusted:
+              packages: com.profITsoft.block2.messaging.*
+kafka:
+  topic:
+    mail: mail
+
+#mail:
+#  retrying:
+#    cron: 0/30 * * * * ?
+
+
+
