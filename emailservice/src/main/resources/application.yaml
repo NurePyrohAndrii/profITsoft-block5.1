@@ -13,7 +13,8 @@ spring:
             type:
               mapping: SendMailMessage:com.profITsoft.emailservice.messaging.SendMailMessage
             trusted:
-              packages: com.profITsoft.block2.messaging.*
+              packages: '*'
+
 kafka:
   topic:
     mail: mail
